@@ -30,11 +30,8 @@ function response(data, options) {
 }
 
 async function download() {
-  const text = await fetch('hacker.txt').then(res => res.text());
-  const headers = {
-    'Content-Disposition': 'attachment; filename="hacker.txt"'
-  };
-  return response(text, { headers });
+  const text = await fetch('./hacker.txt').then(res => res.text());
+  return response(text);
 }
 
 function make_error(err) {
